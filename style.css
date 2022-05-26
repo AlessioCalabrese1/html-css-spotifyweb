@@ -8,6 +8,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 }
 
 a{
@@ -30,6 +31,7 @@ main{
     justify-content: space-between;
     flex-direction: column;
     color: white;
+    min-height: 550px;
 }
 .menu-padding{
     padding: 15px;
@@ -44,6 +46,12 @@ main{
 .logo img{
     width: 80%;
 }
+
+.top{
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+}
 .top-icon{
     line-height: 54px;
 }
@@ -53,6 +61,9 @@ main{
 
 .playlist{
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
 }
 .create{
     display: flex;
@@ -97,6 +108,9 @@ main{
 .download i{
     margin-right: 10px;
 }
+.user{
+    color: white;
+}
 .user i{
     margin-right: 10px;
     font-size: 20px;
@@ -104,14 +118,98 @@ main{
 
 
 
-
+/* Body del main */
 .body{
     width: calc(100vw - 220px);
+    overflow-y: auto;
+    position: relative;
+    padding: 20px;
 }
 
+.upgrade{
+    background-color: rgba(0, 0, 0, 0.3);
+    text-align: end;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100vw - 220px);
+}
+.upgrade a{
+    padding: 12px 40px;
+    border: 2px solid white;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    margin: 20px 5px;
+}
 
+.content-type{
+    margin-top: 80px;
+    text-align: center;
+}
 
+.content-type ul{
+    margin: 15px auto;
+    list-style: none;
+}
+.content-type li{
+    color: var(--menu-text);
+    display: inline-block;
+    text-decoration: none;
+    margin: 15px 15px;
+    font-weight: bold;   
+}
 
+h2{
+    color: white;
+    margin-bottom: 20px;
+}
+h5{
+    color: var(--menu-text);
+    margin-bottom: 20px;
+}
+.recently-played{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+.rp-card{
+    width: calc(100% / 6 - 15px);
+    text-align: center;
+}
+.rp-card img{
+    width: 100%;
+}
+
+.rp-title{
+    margin-top: 15px;
+    text-align: center;
+}
+.title{
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+.subtitle{
+    font-size: 14px;
+    color: var(--menu-text);
+    font-weight: bold;
+}
+
+.create-for, .popular-artist{
+    display: flex;
+    justify-content: start;
+    margin-bottom: 30px;
+}
+.cr-card{
+    margin-right: 15px;
+}
+.pa-card{
+    border-radius: 50%;
+}
 
 
 
@@ -184,8 +282,9 @@ footer{
     font-size: 12px;
 }
 .bar{
-    width: 70%;
+    width: 50%;
     display: flex;
+    margin-right: 15px;
 }
 .partial{
     width: 25%;
@@ -208,6 +307,61 @@ footer{
     width: 20%;
 }
 
+.preference{
+    justify-content: start;
+}
+.options{
+    justify-content: end;
+}
+
 .f-i-big{
     width: 50%;
+}
+
+
+
+
+
+@media all and (min-width:1101px){
+    
+}
+
+@media all and (max-width:1100px){
+    .rp-card{
+        width: calc(100% / 4 - 15px);
+        margin-top: 15px;
+    }
+    /* Da rivedere */
+    .repositioning{
+        position: relative;
+        right: calc((100% / 4 + 4px) * 2);
+        bottom: 0;
+    }
+}
+
+@media all and (max-width:700px){
+    .rp-card{
+        width: calc(100% / 2 - 15px);
+        margin-top: 15px;
+    }
+    /* Da rivedere */
+    .repositioning{
+        position: static;
+    }
+
+    .create-for{
+        justify-content: space-between;
+    }
+
+    .popular-artist{
+        justify-content: space-between;
+    }
+
+    .f-resize{
+        width: 33%;
+    }
+}
+
+@media all and (max-width:600px){
+    
 }
